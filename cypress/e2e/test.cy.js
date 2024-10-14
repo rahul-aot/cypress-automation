@@ -3,3 +3,5 @@ describe('template test', () => {
     cy.visit('https://aiscribe.quipohealth.com/')
   })
 })
+
+

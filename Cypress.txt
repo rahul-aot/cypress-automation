@@ -1,0 +1,7 @@
+installation process
+
+1 - npm init -y
+2 - npm i cypress --save-dev
+3 - npx cypress open
+
+

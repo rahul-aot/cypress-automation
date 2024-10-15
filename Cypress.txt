@@ -5,3 +5,21 @@ installation process
 3 - npx cypress open
 
 
+
+# adding scripts to the package.json
+{
+  "scripts": {
+    "cy:open": "cypress open"
+  }
+}
+
+now i can open cypress using "npm run cy:open"
+
+
+
+# verify the url is correct 
+cy.url().should('include', '/commands/actions')
+
+
+
+

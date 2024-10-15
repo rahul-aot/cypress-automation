@@ -21,5 +21,6 @@ now i can open cypress using "npm run cy:open"
 cy.url().should('include', '/commands/actions')
 
 
+npx cypress run --record --key 8682b47d-7294-4e3b-90a1-1db24b1f6d63
 
 

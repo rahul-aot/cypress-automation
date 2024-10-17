@@ -9,7 +9,7 @@ describe(' launch application ', () => {
         cy.get('#inputEmail').type('abc')
         cy.get('quipo-email-input > .form-validation-errors > strong').should('exist')
         cy.get('quipo-email-input > .form-validation-errors > strong').should('contain', 'Please enter a valid email.')
-        cy.get('#inputEmail').type('abc@gmail.com')
+        cy.get('#inputEmail').type('abccd@gmail.com')
 
 
         cy.get('#password').clear().type('123');
@@ -44,28 +44,16 @@ describe(' launch application ', () => {
               cy.get('.remember-me > input').check();
             }
           });
-
+        cy.get('.btn-primary').click()
+        cy.get('.swal2-popup').should('exist')
+        cy.get('.swal2-confirm').click()
+        cy.get('body').then($body => {
+            if ($body.find('.btn-default').length > 0) {
+              cy.get('.btn-default').click();
+            }
+          });
+          
         
-
-
-        // cy.get('#confirmPassword').clear().type('Rahul@12345');
-
-
-        // cy.get('.remember-me > input').click();
-
-
-//         cy.get('#password').type('Rahul@12345');
-// cy.get('#confirmPassword').type('Rahul@12345');
-// cy.get('.password-match-message').should('not.exist'); // assuming no error when they match
-
-
-
-
-
-
-        // cy.get('#inputEmail').type('abc@gmail.com')
-        // 
-
         
         
     })

@@ -68,3 +68,36 @@ cy.get('body').then($body => {
             }
           });
 
+
+#run cypress in termil specific file 
+
+npx cypress run --spec cypress/e2e/filename.cy.js
+
+#run cypress in termil with choosen browser
+
+npx cypress run --browser firefox
+
+
+
+XPath
+
+npm i -D cypress-xpath
+add entry in command.js  /// <reference types="cypress-xpath" />
+add entry in support/e2e.js  reuire('cypress-xpath')
+
+describe('XPath Locators', () => {
+
+    it('launch test application', () => {
+
+        cy.visit('https://aiscribe.quipohealth.com/')
+        cy.xpath("//div[@class='actionContainerSub']//button").should('have.length', 4)
+    })
+    it('launch image test application', () => {
+
+        cy.visit('https://aiscribe.quipohealth.com/')
+        cy.xpath("//div[@class='mainContainer collapsed']//img").should('have.length', 12)
+    })
+})
+
+
+
